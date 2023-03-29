@@ -15,5 +15,8 @@
     "mongoose": "^5.9.10",
     "nodemon": "^2.0.22",
     "socket.io": "^4.4.1"
+  },
+  "devDependencies": {
+    "@types/mongoose": "^5.11.97"
   }
 }
