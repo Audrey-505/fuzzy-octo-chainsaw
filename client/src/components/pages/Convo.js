@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 function Convo({socket, username, room}){
     const [message, setMessage] = useState('')
     const [messageHistory, setMessageHistory] = useState([])
-    const [messageObtained, setMessageObtained] = useState('')
+    //const [messageObtained, setMessageObtained] = useState('')
 
     const sendMessage = async () => {
         if (message !== '') {
