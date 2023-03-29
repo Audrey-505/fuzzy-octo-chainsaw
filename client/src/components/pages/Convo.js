@@ -5,7 +5,6 @@ function Convo({socket, username, room}){
     const [message, setMessage] = useState('')
     const [messageHistory, setMessageHistory] = useState([])
     //const [messageObtained, setMessageObtained] = useState('')
-
     const sendMessage = async () => {
         if (message !== '') {
             const messageContent = {
@@ -15,16 +14,35 @@ function Convo({socket, username, room}){
                 time: new Date(Date.now()).getHours()
             }
         await socket.emit('send_message', messageContent)
-        setMessageHistory((history) => [...history, messageContent])
+        setMessageHistory((messageHistory) => [...messageHistory, messageContent])
+        console.log('this is from send msg',messageHistory)
         setMessage('')
+       // setMessageHistory([])
     }
 }
 
+    // useEffect(() => {
+    //     //setMessageHistory([])
+    //     socket.on('obtained_message', (data) => {
+    //         console.log('this is from socket it',messageHistory)
+    //         setMessageHistory((messageHistory) => [...messageHistory, data]) 
+    //         // return () => {
+    //         //     socket.off('obtained_message', data)
+    //         //     setMessageHistory(data)
+    //         // }
+    //         //setMessageHistory(messageHistory)
+    //     })
+    // }, [socket])
+
     useEffect(() => {
-        socket.on('obtained_message', (data) => {
-            setMessageHistory((history) => [...history, data]) 
-        })
-    }, [socket])
+        const handler = (data) => {
+          setMessageHistory((messageHistory) => [...messageHistory, data]);
+        };
+        socket.on('obtained_message', handler);
+        // Otherwise you'll start getting errors when the component is unloaded
+        return () => socket.off('obtained_message', handler);
+      }, [socket]);
+
 
     return (
         <div>
@@ -38,7 +56,7 @@ function Convo({socket, username, room}){
             }}
             onKeyUp = {(event) => {event.key === 'Enter' && sendMessage()}}
             />
-            <button onClick={sendMessage}>send</button>
+            <button onClick={() => sendMessage()}>send</button>
             </div>
 
             <div>
