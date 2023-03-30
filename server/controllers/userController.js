@@ -1,4 +1,5 @@
 const { User } = require('../models')
+const { signToken } = require('../utils/auth');
 
 module.exports = {
     getUsers(req, res){
@@ -14,5 +15,15 @@ module.exports = {
             : res.json(user)
         )
         .catch((err) => res.status(500).json(err))
-    }
+    },
+
+    async createUser({ body }, res) {
+        const user = await User.create(body);
+    
+        if (!user) {
+          return res.status(400).json({ message: 'Something is wrong!' });
+        }
+        const token = signToken(user);
+        res.json({ token, user });
+      },
 }

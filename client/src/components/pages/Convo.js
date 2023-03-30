@@ -1,7 +1,10 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
+import { Tab, Nav, Button, Modal } from 'react-bootstrap'
 
-function Convo({socket, username, room}){
+import Sidebar from '../Sidebar'
+
+function Convo({ socket, username, room }) {
     const [message, setMessage] = useState('')
     const [messageHistory, setMessageHistory] = useState([])
     //const [messageObtained, setMessageObtained] = useState('')
@@ -13,13 +16,13 @@ function Convo({socket, username, room}){
                 message: message,
                 time: new Date(Date.now()).getHours()
             }
-        await socket.emit('send_message', messageContent)
-        setMessageHistory((messageHistory) => [...messageHistory, messageContent])
-        console.log('this is from send msg',messageHistory)
-        setMessage('')
-       // setMessageHistory([])
+            await socket.emit('send_message', messageContent)
+            setMessageHistory((messageHistory) => [...messageHistory, messageContent])
+            console.log('this is from send msg', messageHistory)
+            setMessage('')
+            // setMessageHistory([])
+        }
     }
-}
 
     // useEffect(() => {
     //     //setMessageHistory([])
@@ -36,38 +39,40 @@ function Convo({socket, username, room}){
 
     useEffect(() => {
         const handler = (data) => {
-          setMessageHistory((messageHistory) => [...messageHistory, data]);
+            setMessageHistory((messageHistory) => [...messageHistory, data]);
         };
         socket.on('obtained_message', handler);
         // Otherwise you'll start getting errors when the component is unloaded
         return () => socket.off('obtained_message', handler);
-      }, [socket]);
+    }, [socket]);
 
 
     return (
-        <div>
+        <div className="d-flex">
 
-           <div>
-            <input 
-            placeholder='Type a message...'
-            value={message}
-            onChange={(event) => {
-                setMessage(event.target.value)
-            }}
-            onKeyUp = {(event) => {event.key === 'Enter' && sendMessage()}}
-            />
-            <button onClick={() => sendMessage()}>send</button>
-            </div>
+            <Sidebar/>
 
             <div>
                 {messageHistory.map((messageBody) => {
                     return (
-                    <div>
-                        <h1>{messageBody.message}</h1>
-                        <p>{messageBody.creator}</p>
-                        <p>{messageBody.time}</p>
-                    </div> )
+                        <div>
+                            <h1>{messageBody.message}</h1>
+                            <p>{messageBody.creator}</p>
+                            <p>{messageBody.time}</p>
+                        </div>)
                 })}
+            
+
+           
+                <input
+                    placeholder='Type a message...'
+                    value={message}
+                    onChange={(event) => {
+                        setMessage(event.target.value)
+                    }}
+                    onKeyUp={(event) => { event.key === 'Enter' && sendMessage() }}
+                />
+                <button onClick={() => sendMessage()}>send</button>
             </div>
 
         </div>

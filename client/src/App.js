@@ -3,6 +3,9 @@ import io from "socket.io-client";
 import { useState } from "react";
 
 import Convo from "./components/pages/Convo";
+import SignupForm from "./components/Signup";
+import LoginForm from "./components/Login";
+
 //trying to commit client
 
 const socket = io.connect("http://localhost:3001");
@@ -59,6 +62,8 @@ function App() {
       </div>
       ) : (
     <Convo socket={socket} username={username} room={room} />
+    //<SignupForm />
+    //<LoginForm />
       )}
     </div>
   );
