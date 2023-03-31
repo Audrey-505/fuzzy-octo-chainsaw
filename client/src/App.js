@@ -1,72 +1,75 @@
 import "./App.css";
 import io from "socket.io-client";
 import { useState } from "react";
+import homeCont from "./components/pages/NavBar";
 
 import Convo from "./components/pages/Convo";
-import SignupForm from "./components/Signup";
-import LoginForm from "./components/Login";
+import SignupForm from "./components/pages/Signup";
+import LoginForm from "./components/pages/Login";
+import Main from "./components/pages/mainPage";
 
 //trying to commit client
 
-const socket = io.connect("/");
+// const socket = io.connect("/");
 
 function App() {
-  const [showConvo, setShowConvo] = useState(false)
-  //Room State
-  const [room, setRoom] = useState('');
+  // const [showConvo, setShowConvo] = useState(false)
+  // //Room State
+  // const [room, setRoom] = useState('');
 
-  // Messages States
-  // const [message, setMessage] = useState("");
-  // const [messageReceived, setMessageReceived] = useState("");
+  // // Messages States
+  // // const [message, setMessage] = useState("");
+  // // const [messageReceived, setMessageReceived] = useState("");
 
-  const [username, setUsername] = useState('');
-  //const [messageReceived, setMessageReceived] = useState("");
+  // const [username, setUsername] = useState('');
+  // //const [messageReceived, setMessageReceived] = useState("");
 
-  const joinRoom = () => {
-    if (room !== '' && username !== '') {
-      socket.emit("join_room", room);
-      setShowConvo(true)
-    }
-  };
-
-  // const sendMessage = () => {
-  //   socket.emit("send_message", { message, room });
+  // const joinRoom = () => {
+  //   if (room !== '' && username !== '') {
+  //     socket.emit("join_room", room);
+  //     setShowConvo(true)
+  //   }
   // };
 
-  // useEffect(() => {
-  //   socket.on("receive_message", (data) => {
-  //     setMessageReceived(data.message);
-  //   });
-  // }, [socket]);
+  // // const sendMessage = () => {
+  // //   socket.emit("send_message", { message, room });
+  // // };
 
-  return (
-    <div className="App">
-      {!showConvo ? (
-        <div>
-       <input
-        placeholder="Username..."
-        onChange={(event) => {
-          setUsername(event.target.value);
-        }}
-      />
-      <input
-        placeholder="Room Number..."
-        onChange={(event) => {
-          setRoom(event.target.value);
-        }}
-      />
-      <button onClick={joinRoom}> Join Room</button>
-      {/* <button onClick={sendMessage}> Send Message</button>
-      <h1> Message:</h1>
-      {messageReceived} */}
-      </div>
-      ) : (
-    //<Convo socket={socket} username={username} room={room} />
-    <SignupForm />
-    //<LoginForm />
-      )}
-    </div>
-  );
+  // // useEffect(() => {
+  // //   socket.on("receive_message", (data) => {
+  // //     setMessageReceived(data.message);
+  // //   });
+  // // }, [socket]);
+
+  // return (
+  //   <div className="App">
+  //     {!showConvo ? (
+  //       <div>
+  //      <input
+  //       placeholder="Username..."
+  //       onChange={(event) => {
+  //         setUsername(event.target.value);
+  //       }}
+  //     />
+  //     <input
+  //       placeholder="Room Number..."
+  //       onChange={(event) => {
+  //         setRoom(event.target.value);
+  //       }}
+  //     />
+  //     <button onClick={joinRoom}> Join Room</button>
+  //     {/* <button onClick={sendMessage}> Send Message</button>
+  //     <h1> Message:</h1>
+  //     {messageReceived} */}
+  //     </div>
+  //     ) : (
+  //   //<Convo socket={socket} username={username} room={room} />
+  //   // <SignupForm />
+  //   //<LoginForm />
+  //     )}
+  //   </div>
+  // );
+  return <Main />;
 }
 
 export default App;

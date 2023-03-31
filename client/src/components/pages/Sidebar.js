@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Tab, Nav, Button, Modal } from 'react-bootstrap'
 
-import './Sidebar.css'
+// import './Sidebar.css'
 
 export default function Sidebar() {
 
