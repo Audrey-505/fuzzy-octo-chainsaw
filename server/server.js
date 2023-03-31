@@ -1,8 +1,8 @@
 const express = require("express")
 const path = require('path')
-const app = express()
 const db = require('./config/connection')
-const routes = require('./routes')
+const routes = require('./routes/')
+const app = express();
 
 const http = require("http")
 const { Server } = require("socket.io")
@@ -17,7 +17,7 @@ app.use(routes)
 
 // if we're in production, serve client/build as static assets
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, '../client/build')));
+    app.use(express.static(path.join(__dirname, '../client/build/')));
   }
 
 const server = http.createServer(app)
