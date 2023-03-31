@@ -26,6 +26,19 @@ module.exports = {
         const token = signToken(user);
         res.json({ token, user });
       },
+
+      async login({ body }, res ) {
+        const user = await User.findOne({ $or: [{email: body.email }] })
+        if(!user) {
+            return res.status(400).json({ message: 'Cant find this account'})
+        }
+        const correctPw = await user.isCorrectPassword(body.password)
+        if(!correctPw){
+            return res.status(400).json({message: 'Incorrect password'})
+        }
+        const token = signToken(user)
+        res.json({ token, user })
+      }
 }
 
 //testing commits
