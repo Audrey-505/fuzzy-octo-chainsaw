@@ -8,7 +8,7 @@ import LoginForm from "./components/Login";
 
 //trying to commit client
 
-const socket = io.connect("http://localhost:3001");
+const socket = io.connect("/");
 
 function App() {
   const [showConvo, setShowConvo] = useState(false)
@@ -61,8 +61,8 @@ function App() {
       {messageReceived} */}
       </div>
       ) : (
-    //<Convo socket={socket} username={username} room={room} />
-    <SignupForm />
+    <Convo socket={socket} username={username} room={room} />
+    //<SignupForm />
     //<LoginForm />
       )}
     </div>
