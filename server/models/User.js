@@ -25,7 +25,8 @@ const userSchema = new Schema (
             required: true,
             validate: [validatePassword],
             match: [/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/, 'Please enter a password with at least 1 digit 1 letter and at least 8 charachters long'],
-        }
+        },
+        
     }
 )
 
