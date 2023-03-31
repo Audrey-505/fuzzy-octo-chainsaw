@@ -41,7 +41,6 @@ const LoginForm = () => {
     }
 
     setUserFormData({
-      username: '',
       email: '',
       password: '',
     });
@@ -49,6 +48,9 @@ const LoginForm = () => {
 
   return (
     <>
+    <div>
+      <h1>LOGIN FORM</h1>
+    </div>
       <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
         <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>
           Something went wrong with your login credentials!

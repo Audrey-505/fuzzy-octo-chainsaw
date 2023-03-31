@@ -95,21 +95,21 @@ function Convo({ socket, username, room }) {
 
             <Sidebar />
 
-        <div className="chat-window">
+        <div className='convoHolder'>
       <div style={convoHeading}>
         <h3>Live Chat</h3>
       </div>
-      <div className="convo-section">
+      <div className='convo-section'>
           {messageHistory.map((messageBody) => {
             return (
               <div
-                className="message"
+                className='msg'
                 id={username === messageBody.creator ? "me" : "friend"}>
                 <div>
-                  <div className="message-content">
+                  <div className='messageBody'>
                     <p>{messageBody.message}</p>
                   </div>
-                  <div style={meta}>
+                  <div className='meta' style={meta}>
                     <p>{messageBody.time} {messageBody.creator}</p>
                   </div>
                 </div>
@@ -117,16 +117,16 @@ function Convo({ socket, username, room }) {
             );
           })}
       </div>
-      <div className="convo-footer">
+      <div className='convo-footer'>
         <input
-          type="text"
+          type='text'
           value={message}
-          placeholder="Type a message"
+          placeholder='Type a message'
           onChange={(event) => {
             setMessage(event.target.value);
           }}
           onKeyUp={(event) => {
-            event.key === "Enter" && sendMessage();
+            event.key === 'Enter' && sendMessage();
           }}
         />
         <button onClick={sendMessage}>send</button>
