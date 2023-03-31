@@ -1,7 +1,7 @@
 // routes to login and sign up
 export const getUser = (token) => {
     //return fetch('/api/users/self', {
-    return fetch('/users', {
+    return fetch('/api/users', {
         headers: {
             'Content-Type': 'application/json',
             authorization: `Bearer ${token}`
@@ -10,8 +10,8 @@ export const getUser = (token) => {
 }
 
 export const createUser = (userData) => {
-    // return fetch('/api/users', {
-    return fetch('/users', {
+    //return fetch('/api/users', {
+    return fetch('/api/users', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
