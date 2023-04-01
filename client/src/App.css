@@ -41,3 +41,7 @@
   min-height: 100vh;
   z-index: 100;
 }
+
+.nav-item {
+  list-style-type: none;
+}

@@ -3,11 +3,11 @@ import NavBar from "./NavBar";
 import Signup from "../pages/Signup";
 import Login from "../pages/Login";
 import Join from "../pages/Join";
-import Contact from "../pages/Conatct";
+import Contact from "../pages/Contact";
 import Home from '../pages/Home'
 
 export default function MainPage() {
-  const [currentPage, setCurrentPage] = useState("Login");
+  const [currentPage, setCurrentPage] = useState("Home");
 
   const renderPage = () => {
     if (currentPage == "Home") {

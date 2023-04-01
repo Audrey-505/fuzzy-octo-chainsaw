@@ -35,11 +35,11 @@ export default function Contact(props) {
     setEmail((e.target.value))
     // setCursor((e.target.selectionStart(cursor, cursor)))
     var email = e.target.value
-    if(validator.isEmail(email)) {
-      setMessage('Good Email!')
-    } else {
-      setMessage('Email is not valid, enter a valid email!')
-    }
+    // if(validator.isEmail(email)) {
+    //   setMessage('Good Email!')
+    // } else {
+    //   setMessage('Email is not valid, enter a valid email!')
+    // }
   }
 
   // required name and message effect if not filled out
