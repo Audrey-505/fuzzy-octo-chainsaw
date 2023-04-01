@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Tab, Nav, Button, Modal } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 import './Sidebar.css'
 
@@ -9,12 +10,40 @@ const [showModal, setShowModal] = useState(false)
     return (
         <div style={{ width: '250px' }} className="d-flex flex-column">
           <Tab.Container>
-            <Nav variant="tabs" className="col-md-12 d-md-block bg-light sidebar">
-              <Nav.Item>
-                <Nav.Link>Rooms</Nav.Link>
-              </Nav.Item>
+            <Nav variant='tabs' className="col-md-12 d-md-block bg-light sidebar">
               <Nav.Item>
                 <Nav.Link onClick={() => setShowModal(true)}>Rules</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+              <Nav.Link>Rooms</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav variant='tabs'>
+                  <Nav.Item>
+                    <Nav.Link as={Link} to='/convo'>#Gaming</Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <Nav.Link>#Politics</Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <Nav.Link>#TrueCrime</Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <Nav.Link>#Movies</Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <Nav.Link>#News</Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <Nav.Link>#Music</Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <Nav.Link>#TvShows</Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <Nav.Link>#AITA</Nav.Link>
+                  </Nav.Item>
+                </Nav>
               </Nav.Item>
             </Nav>
           </Tab.Container>

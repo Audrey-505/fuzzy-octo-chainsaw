@@ -93,11 +93,11 @@ function Convo({ socket, username, room }) {
 
         <div className='d-flex'>
 
-            <Sidebar />
+            <Sidebar room={room}/>
 
         <div className='convoHolder'>
       <div style={convoHeading}>
-        <h3>Live Chat</h3>
+        <h3>{room} Chat Room</h3>
       </div>
       <div className='convo-section'>
           {messageHistory.map((messageBody) => {
