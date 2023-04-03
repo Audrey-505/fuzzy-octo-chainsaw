@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import io from "socket.io-client";
 import Convo from "../pages/Convo";
+import { Tab, Nav, Button, Modal, Form } from 'react-bootstrap'
 
 const socket = io.connect("/");
 

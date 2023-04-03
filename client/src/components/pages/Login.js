@@ -41,14 +41,16 @@ const LoginForm = () => {
     }
 
     setUserFormData({
-      username: "",
-      email: "",
-      password: "",
+      email: '',
+      password: '',
     });
   };
 
   return (
     <div className="login">
+    <div>
+      <h1>LOGIN FORM</h1>
+    </div>
       <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
         <Alert
           dismissible

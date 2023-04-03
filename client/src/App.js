@@ -4,9 +4,15 @@ import { useState } from "react";
 import homeCont from "./components/pages/NavBar";
 
 import Convo from "./components/pages/Convo";
-import SignupForm from "./components/pages/Signup";
-import LoginForm from "./components/pages/Login";
-import Main from "./components/pages/mainPage";
+// import SignupForm from "./components/Signup";
+// import LoginForm from "./components/Login";
+
+// import Button from 'react-bootstrap/Button';
+// import { Tab, Nav, Button, Modal, Form } from 'react-bootstrap'
+
+// import SignupForm from "./components/pages/Signup";
+// import LoginForm from "./components/pages/Login";
+// import Main from "./components/pages/mainPage";
 
 //trying to commit client
 
@@ -35,16 +41,21 @@ function App() {
   // //   socket.emit("send_message", { message, room });
   // // };
 
-  // // useEffect(() => {
-  // //   socket.on("receive_message", (data) => {
-  // //     setMessageReceived(data.message);
-  // //   });
-  // // }, [socket]);
-
   // return (
   //   <div className="App">
   //     {!showConvo ? (
-  //       <div>
+  //       <div className="justify-content-center">
+  //         {/* <Form.Group className='mb-3'>
+  //         <Form.Label row sm='2'>Username</Form.Label>
+  //         <Form.Control row sm='2' type='email' placeholder='Username'
+  //         onChange={(event) => {
+  //           setUsername(event.target.value);
+  //         }}>
+  //         </Form.Control>
+  //         <Form.Text className="text-muted">
+  //         We'll never share your email with anyone else.
+  //       </Form.Text>
+  //       </Form.Group> */}
   //      <input
   //       placeholder="Username..."
   //       onChange={(event) => {
@@ -57,19 +68,19 @@ function App() {
   //         setRoom(event.target.value);
   //       }}
   //     />
-  //     <button onClick={joinRoom}> Join Room</button>
+  //     <Button variant='secondary' onClick={joinRoom}>Join Room</Button>
+  //     {/* <button variant='light' onClick={joinRoom}> Join Room</button> */}
   //     {/* <button onClick={sendMessage}> Send Message</button>
   //     <h1> Message:</h1>
   //     {messageReceived} */}
   //     </div>
   //     ) : (
-  //   //<Convo socket={socket} username={username} room={room} />
-  //   // <SignupForm />
+  //   <Convo socket={socket} username={username} room={room} />
+  //   //<SignupForm />
   //   //<LoginForm />
   //     )}
   //   </div>
   // );
-  return <Main />;
 }
 
 export default App;

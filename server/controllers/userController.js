@@ -25,9 +25,9 @@ module.exports = {
         }
         const token = signToken(user);
         res.json({ token, user });
-    },
+      },
 
-    async login({ body }, res ) {
+      async login({ body }, res ) {
         const user = await User.findOne({ $or: [{email: body.email }] })
         if(!user) {
             return res.status(400).json({ message: 'Cant find this account'})
@@ -38,7 +38,7 @@ module.exports = {
         }
         const token = signToken(user)
         res.json({ token, user })
-    }
+      }
 }
 
 //testing commits
