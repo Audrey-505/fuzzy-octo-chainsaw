@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-import { Form, Button, Alert } from 'react-bootstrap';
+import { Form, Button, Alert, Container } from 'react-bootstrap';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+
+import Login from './Login'
 
 import { createUser } from '../utils/API';
 import Auth from '../utils/auth';
@@ -102,6 +105,25 @@ const SignupForm = () => {
           Submit
         </Button>
       </Form>
+
+     <Container>
+      {/* <h3>Already have an account? Click <a href="#login">here</a></h3> */}
+      <Link to="/login">already have an account click here</Link>
+     </Container>
+
+     {/* <Container>
+      <Router>
+        <>
+        <Routes>
+        <Route 
+            path='/login' 
+            element={<Login />} 
+          />
+        </Routes>
+      </>
+      </Router>
+     </Container> */}
+
     </>
   );
 };
