@@ -1,9 +1,12 @@
 import React from 'react'
+import Login from "../pages/Login";
+// import style1 from {justifyContent: 'center'}
+// import style2 from {textAlign:'center'}
 
-export default function Home(){
+export default function Home({currentPage, handlePageChange}){
     return(
-        <div>
-             <h1>Home Page</h1>
+        <div className='homePage' style={{justifyContent:'center', textAlign:'center', backgroundSize: 'cover'}}>
+             <h1 className='homeTitle'>Home Page</h1>
             <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque
             velit, lobortis ut magna varius, blandit rhoncus sem. Morbi lacinia nisi
@@ -16,6 +19,13 @@ export default function Home(){
             vitae lorem tortor. In elementum ultricies tempus. Interdum et malesuada
             fames ac ante ipsum primis in faucibus.
             </p>
+            <button className='btn btn-primary btn-lg'>
+            <a
+            href="#Login"
+            onClick={() => handlePageChange('Login')}
+            className={currentPage === 'Login' ? 'nav-link active' : 'nav-link'}
+            ></a>
+            Chat Now!</button>
         </div>
     )
 }

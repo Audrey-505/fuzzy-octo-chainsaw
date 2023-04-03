@@ -4,7 +4,7 @@ import Convo from "../pages/Convo";
 
 const socket = io.connect("/");
 
-export default function App() {
+export default function Join() {
   const [showConvo, setShowConvo] = useState(false);
   //Room State
   const [room, setRoom] = useState("");
@@ -34,7 +34,7 @@ export default function App() {
   }, [socket]);
 
   return (
-    <div className="App">
+    <div className="join">
       {!showConvo ? (
         <div>
           <input

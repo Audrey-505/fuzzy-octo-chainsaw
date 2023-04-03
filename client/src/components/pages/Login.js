@@ -48,7 +48,7 @@ const LoginForm = () => {
   };
 
   return (
-    <>
+    <div className="login">
       <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
         <Alert
           dismissible
@@ -95,7 +95,7 @@ const LoginForm = () => {
           Login !
         </Button>
       </Form>
-    </>
+    </div>
   );
 };
 
