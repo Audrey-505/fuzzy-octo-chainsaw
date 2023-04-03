@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  /* background-image: linear-gradient(to right, #c6ffdd, #fdb786, #f7797d); */
 }
 
 .App-logo {
@@ -36,3 +37,30 @@
     transform: rotate(360deg);
   }
 }
+
+.sidebar {
+  min-height: 100vh;
+  z-index: 100;
+}
+
+.nav-item {
+  list-style-type: none;
+}
+
+.homePage,
+.login,
+.signup,
+.join {
+  background-image: linear-gradient(to right, #c6ffdd, #fdb786, #f7797d);
+  min-height: 100%;
+}
+
+/* .homeTitle {
+  text-align: center;
+  
+}
+
+.homeBtn {
+  display: flex;
+  text-align: center;
+} */

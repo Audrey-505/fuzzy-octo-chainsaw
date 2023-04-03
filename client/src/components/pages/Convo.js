@@ -2,7 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 //import { Tab, Nav, Button, Modal } from 'react-bootstrap'
 
-import Sidebar from '../Sidebar'
+import Sidebar from './Sidebar'
 import './Convo.css'
 import ScrollToBottom from 'react-scroll-to-bottom'
 

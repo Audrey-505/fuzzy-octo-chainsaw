@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Tab, Nav, Button, Modal } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
-import './Sidebar.css'
+// import './Sidebar.css'
 
 export default function Sidebar() {
 const [showModal, setShowModal] = useState(false)

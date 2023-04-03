@@ -35,7 +35,7 @@ io.on('connection', (socket) => {
   socket.on('join_room', (data) => {
     socket.join(data)
   })
-
+  // emit out type of message with this payload to every client using this server
   socket.on('send_message', (data) => {
     socket.to(data.room).emit('obtained_message', data)
   })
