@@ -2,9 +2,9 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 //import { Tab, Nav, Button, Modal } from 'react-bootstrap'
 
-import Sidebar from '../Sidebar'
-
+import Sidebar from './Sidebar'
 import './Convo.css'
+import ScrollToBottom from 'react-scroll-to-bottom'
 
 
 const meta = { display: 'flex', fontSize: '12px'}
@@ -93,40 +93,42 @@ function Convo({ socket, username, room }) {
 
         <div className='d-flex'>
 
-            <Sidebar />
+            <Sidebar room={room}/>
 
-        <div className="chat-window">
+        <div className='convoHolder'>
       <div style={convoHeading}>
-        <h3>Live Chat</h3>
+        <h3>{room} Chat Room</h3>
       </div>
-      <div className="convo-section">
+      <div className='convo-section'>
+        <ScrollToBottom className='.message-container'>
           {messageHistory.map((messageBody) => {
             return (
               <div
-                className="message"
+                className='msg'
                 id={username === messageBody.creator ? "me" : "friend"}>
                 <div>
-                  <div className="message-content">
+                  <div className='messageBody'>
                     <p>{messageBody.message}</p>
                   </div>
-                  <div style={meta}>
+                  <div className='meta' style={meta}>
                     <p>{messageBody.time} {messageBody.creator}</p>
                   </div>
                 </div>
               </div>
             );
           })}
+          </ScrollToBottom>
       </div>
-      <div className="convo-footer">
+      <div className='convo-footer'>
         <input
-          type="text"
+          type='text'
           value={message}
-          placeholder="Type a message"
+          placeholder='Type a message'
           onChange={(event) => {
             setMessage(event.target.value);
           }}
           onKeyUp={(event) => {
-            event.key === "Enter" && sendMessage();
+            event.key === 'Enter' && sendMessage();
           }}
         />
         <button onClick={sendMessage}>send</button>
