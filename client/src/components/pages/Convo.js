@@ -3,8 +3,8 @@ import { useState, useEffect } from 'react'
 //import { Tab, Nav, Button, Modal } from 'react-bootstrap'
 
 import Sidebar from '../Sidebar'
-
 import './Convo.css'
+import ScrollToBottom from 'react-scroll-to-bottom'
 
 
 const meta = { display: 'flex', fontSize: '12px'}
@@ -100,6 +100,7 @@ function Convo({ socket, username, room }) {
         <h3>{room} Chat Room</h3>
       </div>
       <div className='convo-section'>
+        <ScrollToBottom className='.message-container'>
           {messageHistory.map((messageBody) => {
             return (
               <div
@@ -116,6 +117,7 @@ function Convo({ socket, username, room }) {
               </div>
             );
           })}
+          </ScrollToBottom>
       </div>
       <div className='convo-footer'>
         <input
