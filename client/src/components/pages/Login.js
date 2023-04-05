@@ -1,6 +1,6 @@
 // see SignupForm.js for comments
 // import { Modal } from "bootstrap";
-import React, { useState, Component } from "react";
+import React, { useState, useEffect } from "react";
 import { Form, Button, Alert, Container, Modal } from "react-bootstrap";
 import { Link } from 'react-router-dom'
 // import BarNav from "./NavBar";
@@ -16,11 +16,32 @@ export default function LoginForm() {
   const [show, setShow] = useState(false)
   const handleShow = () => setShow(true)
   const handleClose =() => setShow(false)
+  // const google = window.google;
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setUserFormData({ ...userFormData, [name]: value });
   };
+
+  function handleCallBackResponse(response) {
+    console.log('Encoded JWT ID Token: ' + response.credential)
+  }
+
+  useEffect(() => {
+    /*global google*/
+    // The google object is coming from the script in html
+    google.accounts.id.initialize({
+      client_id: '635497664115-ojrf4vd60dvn3jrh7h9v2odc2lr3s0ak.apps.googleusercontent.com',
+      // when the user login -- the function we will call
+      callback: handleCallBackResponse
+    })
+
+    google.accounts.id.renderButton(
+      document.getElementsByClassName('loginDiv'),
+      { theme: 'outline', size: 'large'}
+    )
+
+  }, [])
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -120,6 +141,9 @@ export default function LoginForm() {
         <Button onClick={handleClose} variant='danger'>
           Close
         </Button>
+        <div className="loginDiv">
+
+        </div>
 
         <Container>
         {/* <h3>Create Account? Click <a href="#signup">here</a></h3> */}

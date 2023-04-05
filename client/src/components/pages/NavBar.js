@@ -13,7 +13,7 @@ function NavBar({ currentPage, handlePageChange }) {
         >
           <img src={logo} width='30' height='30' className='d-inline-block align-top'/>
           {' '}
-          The Chat Room
+          Chat Social
           {/* <Nav.Link
             href="#home"
             onClick={() => handlePageChange('Home')}
