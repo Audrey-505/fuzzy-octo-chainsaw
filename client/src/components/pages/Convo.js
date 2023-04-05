@@ -10,7 +10,7 @@ import ScrollToBottom from 'react-scroll-to-bottom'
 const meta = { display: 'flex', fontSize: '12px' }
 const convoHeading = { height: '45px', position: 'relative', cursor: 'pointer', borderRadius: '6px', background: '#7149C6' }
 
-function Convo({ socket, username, room, chat }) {
+function Convo({ socket, username, room, chat, setRoom }) {
   const [message, setMessage] = useState('')
   const [messageHistory, setMessageHistory] = useState([])
   //const [messageObtained, setMessageObtained] = useState('')
@@ -93,7 +93,7 @@ function Convo({ socket, username, room, chat }) {
 
     <div className='d-flex'>
 
-      <Sidebar room={room} />
+      <Sidebar room={room} setRoom={setRoom}/>
 
       <div className='convoHolder'>
         <div style={convoHeading}>

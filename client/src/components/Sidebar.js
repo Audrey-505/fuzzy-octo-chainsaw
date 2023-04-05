@@ -8,7 +8,7 @@ import './Sidebar.css'
 import Convo from './pages/Convo'
 import ConvoHistory from './ConvoHistory';
 
-export default function Sidebar({room}) {
+export default function Sidebar({ room, setRoom}) {
   const [showModal, setShowModal] = useState(false)
 
   //new setting up convos
@@ -68,28 +68,28 @@ export default function Sidebar({room}) {
           <Nav.Item>
             <Nav variant='tabs'>
               <Nav.Item>
-                <Nav.Link room={'Gaming'} as={Link} to='/convo'>#Gaming</Nav.Link>
+                <Nav.Link room={'Gaming'} as={Link} to='/convo' onClick={() => setRoom('Gaming')}>#Gaming</Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link>#Politics</Nav.Link>
+                <Nav.Link as={Link} to='/convo' onClick={() => setRoom('Politics')}>#Politics</Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link>#TrueCrime</Nav.Link>
+                <Nav.Link as={Link} to='/convo' onClick={() => setRoom('TrueCrime')}>#TrueCrime</Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link>#Movies</Nav.Link>
+                <Nav.Link as={Link} to='/convo' onClick={() => setRoom('Movies')}>#Movies</Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link>#News</Nav.Link>
+                <Nav.Link as={Link} to='/convo' onClick={() => setRoom('News')}>#News</Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link>#Music</Nav.Link>
+                <Nav.Link as={Link} to='/convo' onClick={() => setRoom('Music')}>#Music</Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link>#TvShows</Nav.Link>
+                <Nav.Link as={Link} to='/convo' onClick={() => setRoom('TvShows')}>#TvShows</Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link>#AITA</Nav.Link>
+                <Nav.Link as={Link} to='/convo' onClick={() => setRoom('AITA')}>#AITA</Nav.Link>
               </Nav.Item>
             </Nav>
           </Nav.Item>

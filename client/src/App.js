@@ -77,7 +77,7 @@ function App() {
       {messageReceived} */}
       </div>
       ) : (
-    <Convo socket={socket} username={username} room={room} />
+    <Convo socket={socket} username={username} room={room} setRoom={setRoom}/>
     //<SignupForm />
     //<LoginForm />
       )}
