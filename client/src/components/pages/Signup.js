@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
-import { Form, Button, Alert, Container } from 'react-bootstrap';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { Form, Button, Alert, Container, Modal } from "react-bootstrap";
+// import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { Link } from 'react-router-dom'
+// import BarNav from "./NavBar";
 
-import Login from './Login'
+import Login from "./Login";
 
-import { createUser } from "../../utils/API";
+import { createUser } from "../../utils/api";
 import Auth from "../../utils/auth";
 
 const SignupForm = () => {
@@ -14,6 +16,11 @@ const SignupForm = () => {
   const [validated] = useState(false);
   // set state for alert
   const [showAlert, setShowAlert] = useState(false);
+  const [showModal, setShowModal] = useState(false)
+  const [show, setShow] = useState(false)
+  const [showLogin, setShowLogin] =useState('Login')
+  const handleShow = () => setShow(true)
+  const handleClose =() => setShow(false)
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -52,7 +59,19 @@ const SignupForm = () => {
   };
 
   return (
-    <div className="signup">
+    <div className="signup" style={{justifyContent:'center', textAlign:'center'}}>
+      {/* <BarNav /> */}
+      <h1>Sign Up Form</h1>
+      <Button onClick={handleShow} variant='primary' size="lg">
+        Signup
+      </Button>
+      <Modal show={show} onHide={() => setShowModal(false)}>
+      <Modal.Header style={{justifyContent:'center', textAlign: 'center'}}>
+        <Modal.Title style={{fontFamily:'serif', fontSize:'30px'}}>
+          Signup
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
       {/* This is needed for the validation functionality above */}
       <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
         {/* show alert if server response is bad */}
@@ -107,21 +126,29 @@ const SignupForm = () => {
             Password is required!
           </Form.Control.Feedback>
         </Form.Group>
+        {/* </Form> */}
+        {/* <Modal.Footer> */}
         <Button
           disabled={!(userFormData.email && userFormData.password)}
           type="submit"
           variant="success"
         >
-          Sign Up!
+          Sign Up
         </Button>
+        <Button variant="danger" onClick={handleClose}>
+          Close
+        </Button>
+
+      <Container>
+        {/* <h3>Already have an account? Click <a href="#login">here</a></h3> */}
+        <Link to='/Login'
+        // onClick={() => showLogin(true)}
+        >Already have an account?</Link>
+      </Container>
+      {/* </Modal.Footer> */}
       </Form>
 
-     <Container>
-      {/* <h3>Already have an account? Click <a href="#login">here</a></h3> */}
-      <Link to="/login">already have an account click here</Link>
-     </Container>
-
-     {/* <Container>
+      {/* <Container>
       <Router>
         <>
         <Routes>
@@ -133,7 +160,8 @@ const SignupForm = () => {
       </>
       </Router>
      </Container> */}
-
+     </Modal.Body>
+     </Modal>
     </div>
   );
 };

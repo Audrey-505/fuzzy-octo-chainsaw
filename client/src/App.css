@@ -50,9 +50,10 @@
 .homePage,
 .login,
 .signup,
-.join {
+.join,
+.contact {
   background-image: linear-gradient(to right, #c6ffdd, #fdb786, #f7797d);
-  min-height: 100%;
+  min-height: 100vh;
 }
 
 /* .homeTitle {
@@ -64,3 +65,12 @@
   display: flex;
   text-align: center;
 } */
+
+/* .loginBtn{
+  font-size: 40px;
+  display: inline;
+
+
+} */
+
+

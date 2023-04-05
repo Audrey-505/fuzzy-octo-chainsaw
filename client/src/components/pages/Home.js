@@ -2,10 +2,15 @@ import React from 'react'
 import Login from "../pages/Login";
 // import style1 from {justifyContent: 'center'}
 // import style2 from {textAlign:'center'}
+import { Link } from 'react-router-dom'
 
-export default function Home({currentPage, handlePageChange}){
+export default function Home(){
+    // const [currentPage, setCurrentPage] = useState('Login');
+
+
+    // const handlePageChange = (page) => setCurrentPage(page) 
     return(
-        <div className='homePage' style={{justifyContent:'center', textAlign:'center', backgroundSize: 'cover'}}>
+        <div className='homePage' style={{justifyContent:'center', textAlign:'center'}}>
              <h1 className='homeTitle'>Home Page</h1>
             <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque
@@ -19,13 +24,13 @@ export default function Home({currentPage, handlePageChange}){
             vitae lorem tortor. In elementum ultricies tempus. Interdum et malesuada
             fames ac ante ipsum primis in faucibus.
             </p>
-            <button className='btn btn-primary btn-lg'>
-            <a
-            href="#Login"
+            <button className='btn btn-primary btn-lg' as={Link} to='#Login'>
+            {/* <a
+            href="#login"
             onClick={() => handlePageChange('Login')}
-            className={currentPage === 'Login' ? 'nav-link active' : 'nav-link'}
-            ></a>
-            Chat Now!</button>
+            // className={currentPage === 'Login' ? 'nav-link active' : 'nav-link'}
+            ></a> */}
+            Get Started</button>
         </div>
     )
 }

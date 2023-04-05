@@ -1,14 +1,21 @@
 // see SignupForm.js for comments
-import React, { useState } from "react";
-import { Form, Button, Alert } from "react-bootstrap";
+// import { Modal } from "bootstrap";
+import React, { useState, Component } from "react";
+import { Form, Button, Alert, Container, Modal } from "react-bootstrap";
+import { Link } from 'react-router-dom'
+// import BarNav from "./NavBar";
 
-import { loginUser } from "../../utils/API";
+import { loginUser } from "../../utils/api";
 import Auth from "../../utils/auth";
 
-const LoginForm = () => {
+export default function LoginForm() {
   const [userFormData, setUserFormData] = useState({ email: "", password: "" });
   const [validated] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
+  const [showModal, setShowModal] = useState(false)
+  const [show, setShow] = useState(false)
+  const handleShow = () => setShow(true)
+  const handleClose =() => setShow(false)
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -41,16 +48,28 @@ const LoginForm = () => {
     }
 
     setUserFormData({
-      email: '',
-      password: '',
+      email: "",
+      password: "",
     });
   };
 
   return (
-    <div className="login">
-    <div>
-      <h1>LOGIN FORM</h1>
-    </div>
+    <div className="login" style={{justifyContent:'center', textAlign:'center'}}>
+      {/* <BarNav /> */}
+      <h2>
+        To Begin Chatting, 
+        Login Below
+      </h2>
+      <Button onClick={handleShow} variant='primary' size="lg">
+      Login
+      </Button>
+      <Modal show={show}
+      onHide={()=> setShowModal(false)}>
+      <Modal.Header style={{textAlign:'center'}}>
+        <Modal.Title style={{fontFamily:'serif', fontSize:'30px'}}>Login</Modal.Title>
+      </Modal.Header>
+      {/* <Modal.Dialog> */}
+      <Modal.Body>
       <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
         <Alert
           dismissible
@@ -89,16 +108,31 @@ const LoginForm = () => {
             Password is required!
           </Form.Control.Feedback>
         </Form.Group>
+        {/* </Form> */}
+        {/* <Modal.Footer> */}
         <Button
           disabled={!(userFormData.email && userFormData.password)}
           type="submit"
           variant="success"
         >
-          Login !
+          Login
         </Button>
-      </Form>
+        <Button onClick={handleClose} variant='danger'>
+          Close
+        </Button>
+
+        <Container>
+        {/* <h3>Create Account? Click <a href="#signup">here</a></h3> */}
+        <Link to={'./Signup'}
+        // onClick={() => showLogin(true)}
+        >Create Account?</Link>
+        </Container>
+        {/* </Modal.Footer> */}
+        </Form>
+      </Modal.Body>
+      </Modal>
     </div>
   );
 };
 
-export default LoginForm;
+// export default LoginForm;

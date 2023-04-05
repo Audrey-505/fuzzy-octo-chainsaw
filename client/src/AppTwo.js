@@ -22,7 +22,7 @@ function AppTwo() {
                 />
                 <Route
                 path='/convo'
-                element={<App />}
+                element={<Convo />}
                 />
                 <Route
                  path='/'
