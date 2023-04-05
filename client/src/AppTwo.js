@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Signup from './components/Signup'
 import Login from './components/Login'
 import Convo from './components/pages/Convo'
+import DefinedConvo from './components/DefinedConvo'
 
 import App from './App'
 
@@ -22,6 +23,10 @@ function AppTwo() {
                 <Route
                 path='/convo'
                 element={<App />}
+                />
+                <Route
+                path='/convoTwo'
+                element={<DefinedConvo />}
                 />
             </Routes>
             </>
