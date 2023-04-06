@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react'
 import Sidebar from '../Sidebar'
 import './Convo.css'
 import ScrollToBottom from 'react-scroll-to-bottom'
+import axios from 'axios'
 
 
 const meta = { display: 'flex', fontSize: '12px' }
@@ -27,6 +28,7 @@ function Convo({ socket, username, room, chat, setRoom }) {
       console.log('this is from send msg', messageHistory)
       setMessage('')
       // setMessageHistory([])
+      // await axios.post(`api/message`)
     }
   }
 
