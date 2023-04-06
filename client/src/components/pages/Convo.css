@@ -1,0 +1,173 @@
+/* .convo-section {
+  width: auto;
+  height: auto;
+  min-height: 40px;
+  max-width: 120px;
+  background-color: #576CBC;
+  border-radius: 5px;
+  color: white;
+  align-items: center;
+  margin-right: 5px;
+  margin-left: 5px;
+  padding-right: 5px;
+  padding-left: 5px;
+  overflow-wrap: break-word; 
+  word-break: break-word;
+}
+
+#me {
+    justify-content: flex-start;
+} */
+
+/* #friend {
+    justify-content: flex-end;
+} 
+
+.convo-footer {
+  height: 40px;
+  border: 1px solid #263238;
+  border-top: none;
+  display: flex;
+} */
+
+
+.convoHolder {
+  width: 1000px;
+  /* width: 100%; */
+  height: 900px;
+  /* height: 100%; */
+
+}
+
+.convoHolder p {
+  margin: 0;
+}
+.convoHolder {
+  height: 45px;
+  border-radius: 6px;
+  background: #263238;
+  position: relative;
+  cursor: pointer;
+}
+.convoHolder .chat-header p {
+  display: block;
+  padding: 0 1em 0 2em;
+  color: #fff;
+  font-weight: 700;
+  line-height: 45px;
+}
+
+.convoHolder .convo-section {
+  /* height: calc(450px - (45px + 70px)); */
+  height: 500px;
+  /* height: 100%; */
+  border: 1px solid #263238;
+  background: #fff;
+  position: relative;
+}
+.convoHolder .convo-section .message-container {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.convoHolder .convo-section .message-container::-webkit-scrollbar {
+  display: none;
+}
+.convoHolder .convo-section .msg {
+  height: auto;
+  padding: 10px;
+  display: flex;
+}
+
+.convoHolder .convo-section .msg .messageBody {
+  width: auto;
+  height: auto;
+  min-height: 40px;
+  max-width: 120px;
+  background-color: #3E54AC;
+  border-radius: 5px;
+  color: white;
+  display: flex;
+  align-items: center;
+  margin-right: 5px;
+  margin-left: 5px;
+  padding-right: 5px;
+  padding-left: 5px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+#me {
+  justify-content: flex-start;
+}
+
+#me .messageBody {
+  justify-content: flex-start;
+}
+
+#me meta {
+  justify-content: flex-start;
+  margin-left: 5px;
+}
+
+#friend {
+  justify-content: flex-end;
+}
+
+#friend .messageBody {
+  justify-content: flex-end;
+  background-color: #434242;
+}
+
+#friend .meta {
+  justify-content: flex-end;
+  margin-right: 5px;
+}
+
+.meta #creator {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.convoHolder .convo-section .msg .meta {
+  display: flex;
+  font-size: 12px;
+}
+
+.convoHolder .convo-footer {
+  height: 40px;
+  border: 1px solid #263238;
+  border-top: none;
+  display: flex;
+}
+
+.convoHolder .convo-footer input {
+  height: 100%;
+  flex: 85%;
+  border: 0;
+  padding: 0 0.7em;
+  font-size: 1em;
+  border-right: 1px dotted #607d8b;
+
+  outline: none;
+  font-family: "Open Sans", sans-serif;
+}
+
+.convoHolder .convo-footer button {
+  border: 0;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  flex: 15%;
+  height: 100%;
+  background: transparent;
+  outline: none;
+  font-size: 25px;
+  color: lightgray;
+}
+
+.convoHolder .convo-footer button:hover {
+  color: #3E54AC;
+}
