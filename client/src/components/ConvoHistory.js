@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 
 import { getSUser } from '../utils/API';
+import DefinedConvo from './DefinedConvo'
+
 
 export default function ConvoHistory({ chat, currentUser }){
 const [user, setUser] = useState(null)
@@ -79,7 +81,7 @@ if (!user) {
             <Nav>
                 <Nav.Item>
                     {/* <h3>TEST</h3> */}
-                    <Nav.Link>{user.email}</Nav.Link>
+                    <Nav.Link as={Link} to={'/convoTwo'} state={{user: user._id}}>{user.email}</Nav.Link>
                 </Nav.Item>
             </Nav>
         </Tab.Container>
