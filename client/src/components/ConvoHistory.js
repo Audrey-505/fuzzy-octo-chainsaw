@@ -9,6 +9,7 @@ import DefinedConvo from './DefinedConvo'
 
 export default function ConvoHistory({ chat, currentUser }){
 const [user, setUser] = useState(null)
+
 // const array = []
 // console.log(friend.length)
 // console.log(array)
