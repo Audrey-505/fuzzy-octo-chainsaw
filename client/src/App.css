@@ -1,3 +1,4 @@
+
 .App {
   text-align: center;
   /* background-image: linear-gradient(to right, #c6ffdd, #fdb786, #f7797d); */
@@ -47,13 +48,20 @@
   list-style-type: none;
 }
 
-.homePage,
+/* .homePage, */
 .login,
 .signup,
 .join,
 .contact {
   background-image: linear-gradient(to right, #c6ffdd, #fdb786, #f7797d);
   min-height: 100vh;
+}
+
+.homePage {
+  background-image: url('./images/guy-com.JPG');
+  background-repeat: no-repeat;
+  min-height: 75vh;
+  min-width: 100vh;
 }
 
 /* .homeTitle {
