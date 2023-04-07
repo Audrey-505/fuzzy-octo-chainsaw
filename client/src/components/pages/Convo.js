@@ -5,7 +5,6 @@ import { useState, useEffect } from 'react'
 import Sidebar from '../Sidebar'
 import './Convo.css'
 import ScrollToBottom from 'react-scroll-to-bottom'
-import axios from 'axios'
 
 
 const meta = { display: 'flex', fontSize: '12px' }
