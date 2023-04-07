@@ -2,10 +2,11 @@ import "./App.css";
 import io from "socket.io-client";
 import { useState } from "react";
 import homeCont from "./components/pages/NavBar";
+// import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 
-import Convo from "./components/pages/Convo";
-// import SignupForm from "./components/Signup";
-// import LoginForm from "./components/Login";
+// import Convo from "./components/pages/Convo";
+// import Signup from "./components/pages/Signup";
+// import Login from "./components/pages/Login";
 
 // import Button from 'react-bootstrap/Button';
 // import { Tab, Nav, Button, Modal, Form } from 'react-bootstrap'

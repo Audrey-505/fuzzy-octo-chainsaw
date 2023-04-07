@@ -11,9 +11,7 @@ function NavBar({ currentPage, handlePageChange }) {
         <Navbar.Brand href='#home' onClick={() => handlePageChange('Home')} 
         className={currentPage === 'Home' ? 'nav-link active' : 'nav-link'}
         >
-          <img src={logo} width='30' height='30' className='d-inline-block align-top'/>
-          {' '}
-          
+          <img src={logo} width='60' height='60' className='d-inline-block align-top'/>
           {/* <Nav.Link
             href="#home"
             onClick={() => handlePageChange('Home')}

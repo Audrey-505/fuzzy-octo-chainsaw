@@ -138,15 +138,19 @@ const SignupForm = () => {
         <Button variant="danger" onClick={handleClose}>
           Close
         </Button>
+        </Form>
 
       <Container>
         {/* <h3>Already have an account? Click <a href="#login">here</a></h3> */}
         <Link to='/Login'
         // onClick={() => showLogin(true)}
         >Already have an account?</Link>
+        {/* <Link to='/#Join'
+        // onClick={() => showLogin(true)}
+        >start convo?</Link> */}
       </Container>
       {/* </Modal.Footer> */}
-      </Form>
+      {/* </Form> */}
 
       {/* <Container>
       <Router>

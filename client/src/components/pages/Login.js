@@ -2,13 +2,17 @@
 // import { Modal } from "bootstrap";
 import React, { useState, useEffect } from "react";
 import { Form, Button, Alert, Container, Modal } from "react-bootstrap";
-import { Link } from 'react-router-dom'
+import { Link, useNavigate} from 'react-router-dom'
+import Convo from './Convo'
+// import Signup from './Signup'
 // import BarNav from "./NavBar";
 
 import { loginUser } from "../../utils/api";
 import Auth from "../../utils/auth";
 
-export default function LoginForm() {
+
+
+function LoginForm() {
   const [userFormData, setUserFormData] = useState({ email: "", password: "" });
   const [validated] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
@@ -17,6 +21,16 @@ export default function LoginForm() {
   const handleShow = () => setShow(true)
   const handleClose =() => setShow(false)
   // const google = window.google;
+
+  // const [history] = useNavigate()
+  // let navigate = useNavigate()
+
+  let navigate = useNavigate()
+  
+  // function handleNext(){
+  //   navigate('/convo')
+  // }
+
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -27,21 +41,21 @@ export default function LoginForm() {
     console.log('Encoded JWT ID Token: ' + response.credential)
   }
 
-  useEffect(() => {
-    /*global google*/
-    // The google object is coming from the script in html
-    google.accounts.id.initialize({
-      client_id: '635497664115-ojrf4vd60dvn3jrh7h9v2odc2lr3s0ak.apps.googleusercontent.com',
-      // when the user login -- the function we will call
-      callback: handleCallBackResponse
-    })
+  // useEffect(() => {
+  //   /*global google*/
+  //   // The google object is coming from the script in html
+  //   google.accounts.id.initialize({
+  //     client_id: '635497664115-ojrf4vd60dvn3jrh7h9v2odc2lr3s0ak.apps.googleusercontent.com',
+  //     // when the user login -- the function we will call
+  //     callback: handleCallBackResponse
+  //   })
 
-    google.accounts.id.renderButton(
-      document.getElementsByClassName('loginDiv'),
-      { theme: 'outline', size: 'large'}
-    )
+  //   google.accounts.id.renderButton(
+  //     document.getElementsByClassName('loginDiv'),
+  //     { theme: 'outline', size: 'large'}
+  //   )
 
-  }, [])
+  // }, [])
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -72,6 +86,8 @@ export default function LoginForm() {
       email: "",
       password: "",
     });
+
+    navigate('/Join')
   };
 
   return (
@@ -135,6 +151,7 @@ export default function LoginForm() {
           disabled={!(userFormData.email && userFormData.password)}
           type="submit"
           variant="success"
+          onClick={handleFormSubmit}
         >
           Login
         </Button>
@@ -159,4 +176,4 @@ export default function LoginForm() {
   );
 };
 
-// export default LoginForm;
+export default LoginForm;

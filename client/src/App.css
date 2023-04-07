@@ -59,26 +59,31 @@
 
 .homePage {
   background-image: url('./images/guy-com.JPG');
-  background-repeat: no-repeat;
-  min-height: 75vh;
-  min-width: 100vh;
+  background-size: cover;
+  min-height: 50vh;
+  /* min-width: 100vh; */
 }
 
-/* .homeTitle {
+.homeTitle {
   text-align: center;
+  align-items: center;
+  color: white;
+}
+
+.homeChat{
+  background-image: linear-gradient(to right, #c6ffdd, #fdb786, #f7797d);
   
+  min-height: 50vh;
 }
 
-.homeBtn {
-  display: flex;
-  text-align: center;
-} */
+.comingSoon{
+  background-image: url('./images/girl-phone.JPG');
+  background-size: cover;
+  min-height: 50vh;
+}
 
-/* .loginBtn{
-  font-size: 40px;
-  display: inline;
-
-
-} */
+.soonTitle{
+  color: white;
+}
 
 
