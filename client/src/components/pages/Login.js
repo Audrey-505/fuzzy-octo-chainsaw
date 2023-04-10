@@ -1,15 +1,11 @@
 // see SignupForm.js for comments
 // import { Modal } from "bootstrap";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef} from "react";
 import { Form, Button, Alert, Container, Modal } from "react-bootstrap";
 import { Link, useNavigate} from 'react-router-dom'
-import Convo from './Convo'
-// import Signup from './Signup'
-// import BarNav from "./NavBar";
-
+import Convo from '../pages/Convo'
 import { loginUser } from "../../utils/api";
 import Auth from "../../utils/auth";
-
 
 
 function LoginForm() {
@@ -20,13 +16,16 @@ function LoginForm() {
   const [show, setShow] = useState(false)
   const handleShow = () => setShow(true)
   const handleClose =() => setShow(false)
+  
   // const google = window.google;
 
   // const [history] = useNavigate()
   // let navigate = useNavigate()
 
-  let navigate = useNavigate()
+  const navigate = useNavigate()
+  const timerRef = useRef()
   
+  useEffect(() => () => clearTimeout(timerRef.current), [])
   // function handleNext(){
   //   navigate('/convo')
   // }
@@ -59,7 +58,7 @@ function LoginForm() {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-
+    timerRef.current = setTimeout(navigate, 5000)
     // check if form has everything (as per react-bootstrap docs)
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
@@ -98,7 +97,7 @@ function LoginForm() {
       <br />
       <br />
       <h2>
-        To Begin Chatting, 
+        To Begin Networking, 
         Login Below
       </h2>
       <Button onClick={handleShow} variant='primary' size="lg">

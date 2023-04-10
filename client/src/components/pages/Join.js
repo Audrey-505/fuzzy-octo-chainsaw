@@ -36,28 +36,40 @@ export default function Join() {
 
   return (
     <div className="join">
+      {/* <Modal show> */}
+      <Modal.Body>
+      <Modal.Header>
+       <Modal.Title style={{fontFamily:'serif', fontSize:'30px', textAlign:'center'}}>
+        Chat Room
+       </Modal.Title>
+      </Modal.Header>
       {!showConvo ? (
-        <div>
-          <input
-            placeholder="Username..."
+      <div>
+        <Form.Group>
+          <Form.Label>Username</Form.Label>
+          <Form.Control
+            placeholder="Nick Valentine"
             onChange={(event) => {
               setUsername(event.target.value);
             }}
           />
-          <input
-            placeholder="Room Number..."
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Chat Room</Form.Label>
+            <Form.Control
+            placeholder="Room Number/Topic"
             onChange={(event) => {
               setRoom(event.target.value);
             }}
           />
-          <button onClick={joinRoom}> Join Room</button>
-          {/* <button onClick={sendMessage}> Send Message</button>
-        <h1> Message:</h1>
-        {messageReceived} */}
+          <Button onClick={joinRoom}> Join Room</Button>
+        </Form.Group>
         </div>
       ) : (
         <Convo socket={socket} username={username} room={room} />
       )}
+    </Modal.Body>
+    {/* </Modal> */}
     </div>
   );
 }

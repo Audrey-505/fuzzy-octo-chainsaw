@@ -33,22 +33,14 @@ function NavBar({ currentPage, handlePageChange }) {
         </Navbar.Brand>
         </Container>
         <Container>
-           <Nav.Link
+           {/* <Nav.Link
             href="#Join"
             onClick={() => handlePageChange('Join')}
             className={currentPage === 'Join' ? 'nav-link active' : 'nav-link'}
             style={{color: 'white'}}
           >
             Join Room 
-          </Nav.Link>
-          <Nav.Link
-            href="#contact"
-            onClick={() => handlePageChange('contact')}
-            className={currentPage === 'Contact' ? 'nav-link active' : 'nav-link'}
-            style={{color: 'white'}}
-          >
-            Contact
-          </Nav.Link>
+          </Nav.Link> */}
           <Nav.Link
             href="#Login"
             onClick={() => handlePageChange('Login')}
