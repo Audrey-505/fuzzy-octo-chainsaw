@@ -167,3 +167,22 @@
 .convoHolder .convo-footer button:hover {
   color: #3E54AC;
 }
+
+.contactBtn {
+  background-color: #143680;
+  color: white;
+}
+
+.contactBtn:hover{
+  background-image: linear-gradient(to right, #04e2ab, #0e34db);
+  color: #010f1b;
+}
+
+.navbar {
+  font-size: 30px;
+  margin-left: 0px;
+  font-family: 'Fasthand', cursive;
+  font-family: 'Yantramanav', sans-serif;
+}
+
+/* background-image: linear-gradient(to right, #c6ffdd, #fdb786, #f7797d); */

@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 import Login from './Login'
 
-import { createUser } from "../../utils/API";
+import { createUser } from "../../utils/api";
 import Auth from "../../utils/auth";
 
 const SignupForm = () => {
@@ -118,7 +118,7 @@ const SignupForm = () => {
 
      <Container>
       {/* <h3>Already have an account? Click <a href="#login">here</a></h3> */}
-      <Link to="/login">already have an account click here</Link>
+      <Link to="login">already have an account click here</Link>
      </Container>
 
      {/* <Container>

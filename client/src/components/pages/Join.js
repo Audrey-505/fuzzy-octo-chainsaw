@@ -35,6 +35,12 @@ export default function Join() {
   }, [socket]);
 
   return (
+    <div
+    className="modal show"
+    style={{ display: 'block', position: 'initial' }}
+  >
+    <Modal.Dialog>
+    <Modal.Body>
     <div className="join">
       {!showConvo ? (
         <div>
@@ -58,6 +64,9 @@ export default function Join() {
       ) : (
         <Convo socket={socket} username={username} room={room} />
       )}
+    </div>
+    </Modal.Body>
+    </Modal.Dialog>
     </div>
   );
 }

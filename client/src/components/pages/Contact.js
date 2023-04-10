@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Tab, Nav, Button, Modal } from 'react-bootstrap'
 import validator from 'validator';
 
 export default function Contact(props) {
@@ -66,11 +67,18 @@ export default function Contact(props) {
   const handleFormSubmit = (event) => {
     event.preventDefault()
 
-    alert(`Message sent from ${name} to Landon`)
+    alert(`Message sent from ${name} to Developer Team!`)
     setName('')
   }
   return (
-    <form>
+  <div
+    className="modal show"
+    style={{ display: 'block', position: 'initial' }}
+  >
+     <Modal.Dialog>
+     {/* <Modal.Header ></Modal.Header> */}
+     <Modal.Body>
+    <form className="contactForm">
       <h1>Contact</h1>
       <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">Name</label>
@@ -84,9 +92,13 @@ export default function Contact(props) {
         <label for="exampleFormControlTextarea1" class="form-label">Message</label>
         <textarea onChange={handleInput} value={text} class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
       </div>
-      <button type='button' onClick={handleFormSubmit}>
+      <button className="contactBtn" type='button' onClick={handleFormSubmit}>
         Send Message
       </button>
     </form>
+    </Modal.Body>
+    </Modal.Dialog>
+  </div>
   );
 }
+

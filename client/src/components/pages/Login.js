@@ -1,8 +1,8 @@
 // see SignupForm.js for comments
 import React, { useState } from "react";
-import { Form, Button, Alert } from "react-bootstrap";
+import { Form, Button, Alert, Modal } from "react-bootstrap";
 
-import { loginUser } from "../../utils/API";
+import { loginUser } from "../../utils/api";
 import Auth from "../../utils/auth";
 
 const LoginForm = () => {
@@ -47,7 +47,9 @@ const LoginForm = () => {
   };
 
   return (
+
     <div className="login">
+
     <div>
       <h1>LOGIN FORM</h1>
     </div>
@@ -97,7 +99,9 @@ const LoginForm = () => {
           Login !
         </Button>
       </Form>
+      
     </div>
+ 
   );
 };
 

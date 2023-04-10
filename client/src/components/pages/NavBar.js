@@ -3,7 +3,7 @@ import React from 'react'
 function NavBar({ currentPage, handlePageChange }) {
     return(
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
-        <li className="nav-item name">
+        <li className="nav-item list me-auto mb-2 mb-lg-0">
           <a
             href="#home"
             onClick={() => handlePageChange('Home')}
