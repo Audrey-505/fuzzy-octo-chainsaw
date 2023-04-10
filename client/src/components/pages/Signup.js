@@ -59,7 +59,7 @@ const SignupForm = () => {
       password: "",
     });
 
-    navigate('/Join')
+    // navigate('/Join')
   };
 
   return (
@@ -142,6 +142,7 @@ const SignupForm = () => {
           disabled={!(userFormData.email && userFormData.password)}
           type="submit"
           variant="success"
+          onClick={() => {handleFormSubmit(); navigate('/Join')}}
         >
           Sign Up
         </Button>

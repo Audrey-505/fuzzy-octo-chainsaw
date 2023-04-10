@@ -86,8 +86,14 @@ function LoginForm() {
       password: "",
     });
 
-    navigate('/Join')
+    // navigate('/Join')
   };
+  
+  // const twoClicks = React.createClass({
+  //   onClick: function(e){
+
+  //   }
+  // })
 
   return (
     <div className="login" style={{justifyContent:'center', textAlign:'center'}}>
@@ -154,7 +160,7 @@ function LoginForm() {
           disabled={!(userFormData.email && userFormData.password)}
           type="submit"
           variant="success"
-          onClick={handleFormSubmit}
+          onClick={()=> {handleFormSubmit(); navigate('/Join')}}
         >
           Login
         </Button>
