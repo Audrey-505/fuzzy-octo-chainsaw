@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Form, Button, Alert, Container, Modal } from "react-bootstrap";
 // import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 // import BarNav from "./NavBar";
 
 import Login from "./Login";
@@ -21,6 +21,8 @@ const SignupForm = () => {
   const [showLogin, setShowLogin] =useState('Login')
   const handleShow = () => setShow(true)
   const handleClose =() => setShow(false)
+
+  const navigate = useNavigate()
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -56,6 +58,8 @@ const SignupForm = () => {
       email: "",
       password: "",
     });
+
+    navigate('/Join')
   };
 
   return (
