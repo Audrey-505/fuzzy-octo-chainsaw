@@ -1,11 +1,18 @@
 // see SignupForm.js for comments
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
+import { useNavigate, Link, Navigate } from 'react-router-dom';
+
 
 import { loginUser } from '../utils/API';
 import Auth from '../utils/auth';
 
+import App from '../App'
+
 const LoginForm = () => {
+  const navigate = useNavigate()
+  const [showConvo, setShowConvo] = useState(false)
+
   const [userFormData, setUserFormData] = useState({ email: '', password: '' });
   const [validated] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
@@ -35,6 +42,11 @@ const LoginForm = () => {
       const { token, user } = await response.json();
       console.log(user);
       Auth.login(token);
+      // console.log(user);
+      // navigate('../convo')
+      // return navigate("/convo")
+      // return <Navigate to="/convo" />
+      setShowConvo(true)
     } catch (err) {
       console.error(err);
       setShowAlert(true);
@@ -44,14 +56,34 @@ const LoginForm = () => {
       email: '',
       password: '',
     });
+
+    // navigate('../convo', {replace: true})
+    // return navigate("/convo")
+    // return <Navigate to="/convo" />
+
   };
 
+  // const joinRoom = () => {
+  //   setShowConvo(true)
+  // }
+
+  // const time = () => {
+  //   setTimeout(() => {
+  //     navigate('../convo', {replace: true})
+  //   },100)
+  // }
+
+
   return (
-    <>
+  <div>
+     {!showConvo ? (
+    // <div>
+    //   <h1>LOGIN FORM</h1>
+    // </div>
     <div>
       <h1>LOGIN FORM</h1>
-    </div>
       <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+      {/* <Form noValidate validated={validated}> */}
         <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>
           Something went wrong with your login credentials!
         </Alert>
@@ -81,13 +113,20 @@ const LoginForm = () => {
           <Form.Control.Feedback type='invalid'>Password is required!</Form.Control.Feedback>
         </Form.Group>
         <Button
+          // onClick={() => navigate('../convo')}
+          // onClick={() => time()}
+          // onClick={() => handleFormSubmit()}
           disabled={!(userFormData.email && userFormData.password)}
           type='submit'
           variant='success'>
           Submit
         </Button>
       </Form>
-    </>
+      </div>
+      ) : (
+        <App />
+        )}
+  </div>
   );
 };
 

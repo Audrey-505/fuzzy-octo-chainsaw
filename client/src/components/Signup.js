@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
 import { Form, Button, Alert, Container } from 'react-bootstrap';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, useNavigate, useLocation } from 'react-router-dom';
 
 import Login from './Login'
 
 import { createUser } from '../utils/API';
 import Auth from '../utils/auth';
+import loggedIn from '../utils/auth'
+
 
 const SignupForm = () => {
+  let location = useLocation()
+  const navigate = useNavigate()
   // set initial form state
   const [userFormData, setUserFormData] = useState({ email: '', password: '' });
   // set state for form validation
@@ -49,6 +53,13 @@ const SignupForm = () => {
       email: '',
       password: '',
     });
+
+    // if(loggedIn() === true ){
+    //   navigate('/convo', {replace: true})
+      // return <navigate to="/convo" replace={true} state={{ from: location }} />
+    //}
+
+    navigate('/convo', {replace: true})
   };
 
   return (
@@ -99,6 +110,7 @@ const SignupForm = () => {
           <Form.Control.Feedback type='invalid'>Password is required!</Form.Control.Feedback>
         </Form.Group>
         <Button
+          // onClick={() => navigate('../convo', { replace: true })}
           disabled={!(userFormData.email && userFormData.password)}
           type='submit'
           variant='success'>
