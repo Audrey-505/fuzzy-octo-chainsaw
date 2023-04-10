@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Form, Button, Modal } from "react-bootstrap";
 import validator from 'validator';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faGitHubSquare} from '@fortawesome/free-solid-svg-icons'
+import laptopIcon from '../../laptop.svg'
+
 
 export default function Contact(props) {
   const [ name, setName ] =useState('')
@@ -75,12 +79,27 @@ export default function Contact(props) {
     setName('')
   }
   return (
+    <div>
+    <div className='contactSupport'>
+    <h1 style={{fontSize: '40px', textAlign:'left'}}>Contact Chat Social</h1>
+    <br /><br /><br /><br /><br /><br />
+    {/* <h3 style={{fontSize:'30px',position:'relative', textAlign:'left'}} >Give us some details and we will</h3>
+    <h3 style={{fontSize:'30px',position:'relative', textAlign:'left'}}>return the support. Connect by email</h3> */}
+    {/* <h4>Contact us below</h4> */}
+    <br />
+    </div>
     <div className='contact' style={{justifyContent:'center', textAlign:'center'}}>
-    <Button onClick={handleShow}>
-      Contact Us
+    {/* <FontAwesomeIcon icon={faGitHubSquare} style={{color: "#0b0c0f",}} size='10x' /> */}
+    <img src={laptopIcon} className='laptop' style={{fill:'black'}} />
+    <br /><br />
+    <h3 style={{fontSize:'30px',position:'relative', textAlign:'center'}} >Give us some details and we will</h3>
+    <h3 style={{fontSize:'30px',position:'relative', textAlign:'center'}}>return the support. Connect by email</h3>
+    <br /><br />
+    <Button onClick={handleShow} className='btn btn-dark'>
+      Contact Form
     </Button>
     <Modal show={show} onHide={()=> setShowModal()}>
-    <Modal.Header style={{textAlign:'center'}} closeButton>
+    <Modal.Header style={{textAlign:'center'}}>
       <Modal.Title style={{fontFamily:'serif', fontSize:'30px'}}>
         Contact
       </Modal.Title>
@@ -113,6 +132,7 @@ export default function Contact(props) {
     </Form.Group>
     </Modal.Body>
     </Modal>
+    </div>
     </div>
   );
 }

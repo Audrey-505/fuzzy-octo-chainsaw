@@ -61,7 +61,13 @@ const SignupForm = () => {
   return (
     <div className="signup" style={{justifyContent:'center', textAlign:'center'}}>
       {/* <BarNav /> */}
-      <h1>Sign Up Form</h1>
+      <br />
+      <br />
+      <br />
+      <br />
+      <h1>Join Chat Social!</h1>
+      <h3>To get updates on chat rooms weekly,</h3>
+      <h3> signup to be notified when your favorite chat room is booming</h3>
       <Button onClick={handleShow} variant='primary' size="lg">
         Signup
       </Button>

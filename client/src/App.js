@@ -1,7 +1,10 @@
 import "./App.css";
 import io from "socket.io-client";
 import { useState } from "react";
-import homeCont from "./components/pages/NavBar";
+// import { Navbar } from 'react-bootstrap/Navbar';
+import { Navbar } from "react-bootstrap";
+// import homeCont from "./components/pages/NavBar";
+// import NavDisplay from "./components/pages/NavBar"
 // import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 
 // import Convo from "./components/pages/Convo";
@@ -20,6 +23,11 @@ import homeCont from "./components/pages/NavBar";
 // const socket = io.connect("/");
 
 function App() {
+  // const [isUserLoggedIn, setUserLoggedIn] = useState(false)
+
+  // const userAuth =()=> {
+  //   setUserLoggedIn(!isUserLoggedIn)
+  // }
   // const [showConvo, setShowConvo] = useState(false)
   // //Room State
   // const [room, setRoom] = useState('');
@@ -41,7 +49,11 @@ function App() {
   // // const sendMessage = () => {
   // //   socket.emit("send_message", { message, room });
   // // };
-
+  // return(
+  //   <div>
+  //     <Navbar isUserLoggedIn={isUserLoggedIn} userAuth={userAuth}></Navbar>
+  //   </div>
+  // )
   // return (
   //   <div className="App">
   //     {!showConvo ? (

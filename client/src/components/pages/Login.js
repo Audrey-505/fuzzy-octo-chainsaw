@@ -93,6 +93,10 @@ function LoginForm() {
   return (
     <div className="login" style={{justifyContent:'center', textAlign:'center'}}>
       {/* <BarNav /> */}
+      <br />
+      <br />
+      <br />
+      <br />
       <h2>
         To Begin Chatting, 
         Login Below

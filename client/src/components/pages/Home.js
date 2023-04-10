@@ -2,6 +2,7 @@ import React from 'react'
 import Login from "../pages/Login";
 // import style1 from {justifyContent: 'center'}
 // import style2 from {textAlign:'center'}
+import { Button } from "react-bootstrap"
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCommentDots } from '@fortawesome/free-solid-svg-icons'
@@ -25,19 +26,16 @@ export default function Home(){
              <br />
              <br />
              <br />
-             <br />
-            <button className='btn btn-primary btn-lg' as={Link} to='#Login'>
-            {/* <a
-            href="#login"
-            onClick={() => handlePageChange('Login')}
-            // className={currentPage === 'Login' ? 'nav-link active' : 'nav-link'}
-            ></a> */}
-            Get Started</button>
+            <a href='./Signup'>
+            <Button className='btn btn-primary btn-lg'>
+            Get Started
+            </Button>
+            </a>
             </div>
             <div className='homeChat' style={{justifyContent:'center', textAlign:'center'}}>
             <br />
             <br />
-            <FontAwesomeIcon icon={faCommentDots} beat style={{color: "#0a0514",}} size='10x' />
+            <FontAwesomeIcon icon={faCommentDots} beat style={{color: "#0a0514"}} size='10x' />
             <br />
             <br />   
             <h1>"Your network is your net worth"</h1>

@@ -3,12 +3,12 @@ import { useState, useEffect } from 'react'
 //import { Tab, Nav, Button, Modal } from 'react-bootstrap'
 
 import Sidebar from './Sidebar'
-import './Convo.css'
+// import './App.css'
 import ScrollToBottom from 'react-scroll-to-bottom'
 
 
 const meta = { display: 'flex', fontSize: '12px'}
-const convoHeading = {height: '45px', position: 'relative', cursor: 'pointer', borderRadius: '6px', background: '#7149C6'}
+const convoHeading = {height: '45px', cursor: 'pointer', borderRadius: '6px', background: 'black', color: 'white', alignText: 'center'}
 
 function Convo({ socket, username, room }) {
     const [message, setMessage] = useState('')
