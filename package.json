@@ -1,6 +1,9 @@
 {
   "name": "fuzzy-octo-chainsaw",
   "version": "1.0.0",
+  "engines": {
+    "node": "18.12.1"
+  },
   "description": "",
   "main": "index.js",
   "scripts": {
