@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import NavBar from "./NavBar";
 import Signup from "../pages/Signup";
 import Login from "../pages/Login";
-import Join from "../pages/Join";
+// import Join from "../pages/Join";
 import Contact from "../pages/Contact";
 import Home from '../pages/Home'
 
@@ -19,9 +19,9 @@ export default function MainPage() {
     if (currentPage == "Signup") {
       return <Signup />;
     }
-    if (currentPage == "Join") {
-      return <Join />;
-    }
+    // if (currentPage == "Join") {
+    //   return <Join />;
+    // }
     return <Contact />;
   };
 
