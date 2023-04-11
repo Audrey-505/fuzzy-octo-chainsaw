@@ -4,7 +4,7 @@ import Convo from "../pages/Convo";
 import { Button, Modal, Form, Nav } from 'react-bootstrap'
 import NavBar from "./NavBar";
 
-const socket = io.connect("/");
+// const socket = io.connect("/");
 
 export default function Join() {
   const [showConvo, setShowConvo] = useState(false);

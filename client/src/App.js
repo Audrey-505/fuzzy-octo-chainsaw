@@ -2,12 +2,14 @@ import "./App.css";
 import io from "socket.io-client";
 import { useState } from "react";
 // import { Navbar } from 'react-bootstrap/Navbar';
-import { Navbar } from "react-bootstrap";
+// import { Navbar } from "react-bootstrap";
+import { Button, Modal, Form, Nav } from 'react-bootstrap'
+import NavBar from "./components/pages/NavBar";
 // import homeCont from "./components/pages/NavBar";
 // import NavDisplay from "./components/pages/NavBar"
 // import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 
-// import Convo from "./components/pages/Convo";
+import Convo from "./components/pages/Convo";
 // import Signup from "./components/pages/Signup";
 // import Login from "./components/pages/Login";
 
@@ -20,80 +22,66 @@ import { Navbar } from "react-bootstrap";
 
 //trying to commit client
 
-// const socket = io.connect("/");
+const socket = io.connect("/");
 
 function App() {
-  // const [isUserLoggedIn, setUserLoggedIn] = useState(false)
+  const [showConvo, setShowConvo] = useState(false)
+  //Room State
+  const [room, setRoom] = useState('');
 
-  // const userAuth =()=> {
-  //   setUserLoggedIn(!isUserLoggedIn)
-  // }
-  // const [showConvo, setShowConvo] = useState(false)
-  // //Room State
-  // const [room, setRoom] = useState('');
+  // Messages States
+  // const [message, setMessage] = useState("");
+  // const [messageReceived, setMessageReceived] = useState("");
 
-  // // Messages States
-  // // const [message, setMessage] = useState("");
-  // // const [messageReceived, setMessageReceived] = useState("");
+  const [username, setUsername] = useState('');
+  //const [messageReceived, setMessageReceived] = useState("");
 
-  // const [username, setUsername] = useState('');
-  // //const [messageReceived, setMessageReceived] = useState("");
-
-  // const joinRoom = () => {
-  //   if (room !== '' && username !== '') {
-  //     socket.emit("join_room", room);
-  //     setShowConvo(true)
-  //   }
-  // };
-
-  // // const sendMessage = () => {
-  // //   socket.emit("send_message", { message, room });
-  // // };
-  // return(
-  //   <div>
-  //     <Navbar isUserLoggedIn={isUserLoggedIn} userAuth={userAuth}></Navbar>
-  //   </div>
-  // )
-  // return (
-  //   <div className="App">
-  //     {!showConvo ? (
-  //       <div className="justify-content-center">
-  //         {/* <Form.Group className='mb-3'>
-  //         <Form.Label row sm='2'>Username</Form.Label>
-  //         <Form.Control row sm='2' type='email' placeholder='Username'
-  //         onChange={(event) => {
-  //           setUsername(event.target.value);
-  //         }}>
-  //         </Form.Control>
-  //         <Form.Text className="text-muted">
-  //         We'll never share your email with anyone else.
-  //       </Form.Text>
-  //       </Form.Group> */}
-  //      <input
-  //       placeholder="Username..."
-  //       onChange={(event) => {
-  //         setUsername(event.target.value);
-  //       }}
-  //     />
-  //     <input
-  //       placeholder="Room Number..."
-  //       onChange={(event) => {
-  //         setRoom(event.target.value);
-  //       }}
-  //     />
-  //     <Button variant='secondary' onClick={joinRoom}>Join Room</Button>
-  //     {/* <button variant='light' onClick={joinRoom}> Join Room</button> */}
-  //     {/* <button onClick={sendMessage}> Send Message</button>
-  //     <h1> Message:</h1>
-  //     {messageReceived} */}
-  //     </div>
-  //     ) : (
-  //   <Convo socket={socket} username={username} room={room} />
-  //   //<SignupForm />
-  //   //<LoginForm />
-  //     )}
-  //   </div>
-  // );
+  const joinRoom = () => {
+    if (room !== '' && username !== '') {
+      socket.emit("join_room", room);
+      setShowConvo(true)
+    }
+  };
+  return (
+      <div className="join">
+      {!showConvo ? (
+      <div>
+      {/* <Modal show> */}
+      {/* <Modal.Body> */}
+      <Modal.Header>
+       <Modal.Title style={{fontFamily:'serif', fontSize:'30px', textAlign:'center'}}>
+        Chat Room
+       </Modal.Title>
+      </Modal.Header>
+      {/* {!showConvo ? ( */}
+      {/* <div> */}
+        <Form.Group>
+          <Form.Label>Username</Form.Label>
+          <Form.Control
+            placeholder="Nick Valentine"
+            onChange={(event) => {
+              setUsername(event.target.value);
+            }}
+          />
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Chat Room</Form.Label>
+            <Form.Control
+            placeholder="Room Number/Topic"
+            onChange={(event) => {
+              setRoom(event.target.value);
+            }}
+          />
+          <Button onClick={joinRoom}> Join Room</Button>
+        </Form.Group>
+        </div>
+        ) : (
+        <Convo socket={socket} username={username} room={room} setRoom={setRoom} />
+        )}
+     {/* </Modal.Body> */}
+      {/* </Modal> */}
+    </div>
+  );
 }
 
 export default App;

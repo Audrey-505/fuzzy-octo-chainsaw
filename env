@@ -1,3 +1,0 @@
-MONGODB_URI = mongodb+srv://landonM:tIBSLSKYVbzuTdNK@cluster0.5k55w.mongodb.net/<dbname>?retryWrites=true&w=majority
-APP_USER = landonM
-APP_PASSWORD = tIBSLSKYVbzuTdNK
