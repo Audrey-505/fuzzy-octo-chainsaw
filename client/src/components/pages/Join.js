@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import io from "socket.io-client";
 import Convo from "../pages/Convo";
-import { Button, Modal, Form } from 'react-bootstrap'
+import { Button, Modal, Form, Nav } from 'react-bootstrap'
+import NavBar from "./NavBar";
 
 const socket = io.connect("/");
 
@@ -66,7 +67,12 @@ export default function Join() {
         </Form.Group>
         </div>
       ) : (
+        <div>
+        <NavBar>
+          <Nav.Link>Logout</Nav.Link>
+        </NavBar>
         <Convo socket={socket} username={username} room={room} />
+        </div>
       )}
     </Modal.Body>
     {/* </Modal> */}

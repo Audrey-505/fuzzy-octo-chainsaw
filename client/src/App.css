@@ -229,6 +229,7 @@
 
 .contactSupport {
   background-image: url(./images/contact.jpeg);
+  background-size:auto;
   min-height: 50vh;
 }
 

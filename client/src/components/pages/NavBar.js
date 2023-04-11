@@ -11,12 +11,15 @@ import {Link, useNavigate} from 'react-router-dom'
 function NavBar({ currentPage, handlePageChange }) {
   // const auth = useContext(Auth)
   // const {isUserLoggedIn, userAuth} = props
+  const [showLogout, setShowLogout] = useState(false)
 
   const navigate = useNavigate()
 
   const [showModal, setShowModal] = useState(false)
     return(
-      <>
+      <div>
+       {/* {!showLogout ?( */}
+        <div>
         <Navbar bg='dark' variant='dark' className="navbar navbar-expand-lg me-auto mb-2 bg-body-tertiary">
         <Container className="nav-item name" >
         <Navbar.Brand href='#home' onClick={() => handlePageChange('Home')} 
@@ -32,33 +35,26 @@ function NavBar({ currentPage, handlePageChange }) {
           </Nav.Link> */}
         </Navbar.Brand>
         </Container>
-        <Container>
-           {/* <Nav.Link
-            href="#Join"
-            onClick={() => handlePageChange('Join')}
-            className={currentPage === 'Join' ? 'nav-link active' : 'nav-link'}
-            style={{color: 'white'}}
-          >
-            Join Room 
-          </Nav.Link> */}
-          <Nav.Link
+        {/* {!showLogout ?( */}
+          <div>
+            <Nav.Link
             href="#Login"
             onClick={() => handlePageChange('Login')}
             // onClick={()=> setShowModal(true)}
             className={currentPage === 'Login' ? 'nav-link active' : 'nav-link'}
             style={{color: 'white'}}
-          >
+            >
             Login
-          </Nav.Link>
-          <Nav.Link
+            </Nav.Link>
+            <Nav.Link
             href="#Signup"
             onClick={() => handlePageChange('Signup')}
             className={currentPage === 'Signup' ? 'nav-link active' : 'nav-link'}
             style={{color: 'white'}}
-          >
+            >
             Signup
-          </Nav.Link>
-           <Nav.Link
+            </Nav.Link>
+            <Nav.Link
             href="#contact"
             onClick={() => handlePageChange('contact')}
             className={currentPage === 'Contact' ? 'nav-link active' : 'nav-link'}
@@ -66,9 +62,31 @@ function NavBar({ currentPage, handlePageChange }) {
           >
             Contact
           </Nav.Link>
-        </Container>
+          </div>
+        {/* ):( */}
+          <div>
+            <Nav.Link
+            href="#Logout"
+            onClick={() => handlePageChange('Home')}
+            // onClick={()=> setShowModal(true)}
+            className={currentPage === 'Login' ? 'nav-link active' : 'nav-link'}
+            style={{color: 'white'}}
+            >
+            Logout
+            </Nav.Link>
+            <Nav.Link
+            href="#contact"
+            onClick={() => handlePageChange('contact')}
+            className={currentPage === 'Contact' ? 'nav-link active' : 'nav-link'}
+            style={{color: 'white'}}
+            >
+            Contact
+            </Nav.Link>
+          </div>
+        {/* )} */}
       </Navbar>
-    </>
+      </div>
+    </div>
     )
 }
 
