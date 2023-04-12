@@ -59,7 +59,7 @@
 .login,
 .signup,
 .join {
-  background-image: linear-gradient(to right, #04e2ab, #0e34db);
+  background-image: linear-gradient(to right, #04e2ab, #6480fc);
   min-height: 100vh;
 }
 
