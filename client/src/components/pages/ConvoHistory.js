@@ -30,30 +30,13 @@ export default function ConvoHistory({ chat, currentUser }) {
 
     const getUser = async () => {
       try {
-        // const res = await fetch('api/users?userId=' + friend)
-        // const res = await fetch(`api/users?userId=${friend}`)
-        // const res = await fetch('api/users?userId=' + friend)
-        // const res = await axios.get(`/api/users/?userId=${friend}`)
-        const res = await axios.get(`/api/users/${friend}`);
 
-        // await axios.get(`/api/users/?userId=${friend}`)
-        // .then(function (res){
-        //     console.log(res.data)
-        // })
+        const res = await axios.get(`/api/users/${friend}`);
 
         console.log(friend);
         console.log(res.data);
-        // console.log(res.data.email)
         setUser(res.data);
-        // const data = await res.json()
-        // console.log(data)
-        // console.log(data[7].email)
-        // let each = data.map((a) => a.email)
-        // console.log(each)
-        // setUser(each)
-        // setUser(data)
-        // console.log(user)
-        // console.log(Object.keys(data))
+    
       } catch (error) {
         console.log(error);
       }

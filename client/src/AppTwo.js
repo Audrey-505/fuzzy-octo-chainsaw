@@ -5,7 +5,7 @@ import Signup from '../src/components/pages/Signup'
 import Login from '../src/components/pages/Login'
 import Convo from '../src/components/pages/Convo'
 import Main from '../src/components/pages/mainPage'
-import Join from '../src/components/pages/Join'
+// import Join from '../src/components/pages/Join'
 import DefinedConvo from './components/pages/DefinedConvo'
 
 // const socket = io.connect("/");

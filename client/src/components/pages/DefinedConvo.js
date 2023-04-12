@@ -50,26 +50,6 @@ export default function DefinedConvo({}) {
     getChat();
   }, []);
 
-  // const [user, setUser] = useState()
-  // useEffect(() => {
-  //   setUser(Auth.getProfile())
-  // }, [])
-  // // console.log(user)
-  // const [chat, setChat] = useState([])
-  // useEffect(() => {
-  //     const getChats = async () => {
-  //         if(!user){
-  //             return
-  //         } try {
-  //             const convo = await fetch('api/chat/' + user.data._id)
-  //             const convoInfo = await convo.json()
-  //             console.log(convoInfo)
-  //         }catch(error){
-
-  //         }
-  //     }
-  //     getChats()
-  // },[])
 
   return (
     <div>

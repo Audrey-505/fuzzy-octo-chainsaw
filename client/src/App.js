@@ -1,26 +1,12 @@
 import "./App.css";
 import io from "socket.io-client";
 import { useState } from "react";
-// import { Navbar } from 'react-bootstrap/Navbar';
-// import { Navbar } from "react-bootstrap";
 import { Button, Modal, Form, Nav } from 'react-bootstrap'
 import NavBar from "./components/pages/NavBar";
-// import homeCont from "./components/pages/NavBar";
-// import NavDisplay from "./components/pages/NavBar"
-// import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
+
 
 import Convo from "./components/pages/Convo";
-// import Signup from "./components/pages/Signup";
-// import Login from "./components/pages/Login";
 
-// import Button from 'react-bootstrap/Button';
-// import { Tab, Nav, Button, Modal, Form } from 'react-bootstrap'
-
-// import SignupForm from "./components/pages/Signup";
-// import LoginForm from "./components/pages/Login";
-// import Main from "./components/pages/mainPage";
-
-//trying to commit client
 
 const socket = io.connect("/");
 

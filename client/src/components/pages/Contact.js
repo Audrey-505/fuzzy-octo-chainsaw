@@ -60,18 +60,6 @@ export default function Contact(props) {
     }
   }, [message, name, cursor])
 
-// email effect used to check email validation
-  // useEffect(function(){
-  //   let checkEmail = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
-  //   let result = checkEmail.test(email)
-
-  //   if(!result){
-  //     setError('Email is not a valid email!')
-  //   } else {
-  //     setError(null)
-  //   }
-  // }, [email, error])
-
   const handleFormSubmit = (event) => {
     event.preventDefault()
 
@@ -83,13 +71,9 @@ export default function Contact(props) {
     <div className='contactSupport'>
     <h1 style={{fontSize: '40px', textAlign:'left'}}>Contact Chat Social</h1>
     <br /><br /><br /><br /><br /><br />
-    {/* <h3 style={{fontSize:'30px',position:'relative', textAlign:'left'}} >Give us some details and we will</h3>
-    <h3 style={{fontSize:'30px',position:'relative', textAlign:'left'}}>return the support. Connect by email</h3> */}
-    {/* <h4>Contact us below</h4> */}
     <br />
     </div>
     <div className='contact' style={{justifyContent:'center', textAlign:'center'}}>
-    {/* <FontAwesomeIcon icon={faGitHubSquare} style={{color: "#0b0c0f",}} size='10x' /> */}
     <img src={laptopIcon} className='laptop' style={{fill:'black'}} />
     <br /><br />
     <h3 style={{fontSize:'30px',position:'relative', textAlign:'center'}} >Give us some details and we will</h3>

@@ -1,13 +1,13 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import io from "socket.io-client";
-//import { Tab, Nav, Button, Modal } from 'react-bootstrap'
+import { Tab, Nav, Button, Modal } from 'react-bootstrap'
 
 import Sidebar from './Sidebar'
-// import './App.css'
+
 import ScrollToBottom from 'react-scroll-to-bottom'
 
-// const socket = io.connect("/");
+
 
 
 const meta = { display: 'flex', fontSize: '12px' }
@@ -34,19 +34,6 @@ function Convo({ socket, username, room, chat, setRoom }) {
     }
   }
 
-  // useEffect(() => {
-  //     //setMessageHistory([])
-  //     socket.on('obtained_message', (data) => {
-  //         console.log('this is from socket it',messageHistory)
-  //         setMessageHistory((messageHistory) => [...messageHistory, data]) 
-  //         // return () => {
-  //         //     socket.off('obtained_message', data)
-  //         //     setMessageHistory(data)
-  //         // }
-  //         //setMessageHistory(messageHistory)
-  //     })
-  // }, [socket])
-
   useEffect(() => {
     const handler = (data) => {
       setMessageHistory((messageHistory) => [...messageHistory, data]);
@@ -58,43 +45,6 @@ function Convo({ socket, username, room, chat, setRoom }) {
 
 
   return (
-    // <div className="d-flex">
-
-    //     <Sidebar/>
-
-    //     <div>
-    //         <div style={convoHeading}>
-    //             <h1>Live Chat</h1>
-    //         </div>
-    //         <div className='convo-section'>
-    //         {messageHistory.map((messageBody) => {
-    //             return (
-    //                 <div id={username === messageBody.creator ? "me" : "friend"}>
-    //                     <div>
-    //                     <h3>{messageBody.message}</h3>
-    //                     </div>
-    //                     <div style={meta}>
-    //                     <p>{messageBody.creator} {messageBody.time}</p>
-    //                     </div>
-    //                 </div>)
-    //         })}
-    //         </div>
-
-    //         <div className='convo-footer'>
-    //         <input
-    //             placeholder='Type a message...'
-    //             value={message}
-    //             onChange={(event) => {
-    //                 setMessage(event.target.value)
-    //             }}
-    //             onKeyUp={(event) => { event.key === 'Enter' && sendMessage() }}
-    //         />
-    //         <button onClick={() => sendMessage()}>send</button>
-    //         </div>
-    //     </div>
-
-    // </div>
-
     <div className='d-flex'>
 
       <Sidebar room={room} setRoom={setRoom}/>

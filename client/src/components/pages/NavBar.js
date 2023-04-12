@@ -18,7 +18,7 @@ function NavBar({ currentPage, handlePageChange }) {
   const [showModal, setShowModal] = useState(false)
     return(
       <div>
-       {/* {!showLogout ?( */}
+       {/* {!showLogout ? ( */}
         <div>
         <Navbar bg='dark' variant='dark' className="navbar navbar-expand-lg me-auto mb-2 bg-body-tertiary">
         <Container className="nav-item name" >
@@ -35,8 +35,9 @@ function NavBar({ currentPage, handlePageChange }) {
           </Nav.Link> */}
         </Navbar.Brand>
         </Container>
-        {/* {!showLogout ?( */}
+        {!showLogout ? (
           <div>
+            {/* <NavBar> */}
             <Nav.Link
             href="#Login"
             onClick={() => handlePageChange('Login')}
@@ -62,9 +63,9 @@ function NavBar({ currentPage, handlePageChange }) {
           >
             Contact
           </Nav.Link>
+          {/* </NavBar> */}
           </div>
-        {/* ):( */}
-          <div>
+            ):(
             <Nav.Link
             href="#Logout"
             onClick={() => handlePageChange('Home')}
@@ -74,16 +75,7 @@ function NavBar({ currentPage, handlePageChange }) {
             >
             Logout
             </Nav.Link>
-            <Nav.Link
-            href="#contact"
-            onClick={() => handlePageChange('contact')}
-            className={currentPage === 'Contact' ? 'nav-link active' : 'nav-link'}
-            style={{color: 'white'}}
-            >
-            Contact
-            </Nav.Link>
-          </div>
-        {/* )} */}
+        )}
       </Navbar>
       </div>
     </div>
