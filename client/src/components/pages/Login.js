@@ -161,7 +161,7 @@ function LoginForm() {
               variant="success"
               onClick={() => {
                 handleFormSubmit();
-                navigate("/Convo");
+                navigate("/");
               }}
             >
               Login

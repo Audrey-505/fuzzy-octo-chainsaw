@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import NavBar from "./NavBar";
 import Signup from "../pages/Signup";
 import Login from "../pages/Login";
-// import Join from "../pages/Join";
+// import Convo from "../pages/Convo";
 import Contact from "../pages/Contact";
 import Home from '../pages/Home'
+import App from "../../App";
 
 export default function MainPage() {
   const [currentPage, setCurrentPage] = useState("Home");
@@ -19,9 +20,9 @@ export default function MainPage() {
     if (currentPage == "Signup") {
       return <Signup />;
     }
-    // if (currentPage == "Join") {
-    //   return <Join />;
-    // }
+    if (currentPage == "Convo") {
+      return <App />;
+    }
     return <Contact />;
   };
 

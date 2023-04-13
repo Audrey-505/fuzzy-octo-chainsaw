@@ -2,6 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import io from "socket.io-client";
 import { Tab, Nav, Button, Modal } from 'react-bootstrap'
+import NavBar from './NavBar';
 
 import Sidebar from './Sidebar'
 
@@ -46,7 +47,7 @@ function Convo({ socket, username, room, chat, setRoom }) {
 
   return (
     <div className='d-flex'>
-
+      {/* <NavBar /> */}
       <Sidebar room={room} setRoom={setRoom}/>
 
       <div className='convoHolder'>

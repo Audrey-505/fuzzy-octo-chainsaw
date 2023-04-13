@@ -142,7 +142,9 @@ const SignupForm = () => {
           disabled={!(userFormData.email && userFormData.password)}
           type="submit"
           variant="success"
-          onClick={() => {handleFormSubmit(); navigate('/Convo')}}
+          onClick={() => {handleFormSubmit(); 
+            navigate('/Home')
+          }}
         >
           Sign Up
         </Button>
