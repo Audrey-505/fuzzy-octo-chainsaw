@@ -25,7 +25,7 @@ function NavBar({ currentPage, handlePageChange }) {
             href="/"
             onClick={() => handlePageChange('Convo')}
             className={currentPage === "Convo" ? "nav-link active" : "nav-link"}
-            style={{ color: "black" }}
+            style={{ color: "white" }}
           >
             Join Room
           </Nav.Link>
@@ -34,7 +34,7 @@ function NavBar({ currentPage, handlePageChange }) {
             onClick={() => Auth.logout()}
             // onClick={()=> setShowModal(true)}
             className={currentPage === "Home" ? "nav-link active" : "nav-link"}
-            style={{ color: "black" }}
+            style={{ color: "white" }}
           >
             Logout
           </Nav.Link>
@@ -52,7 +52,7 @@ function NavBar({ currentPage, handlePageChange }) {
             onClick={() => handlePageChange("Login")}
             // onClick={()=> setShowModal(true)}
             className={currentPage === "Login" ? "nav-link active" : "nav-link"}
-            style={{ color: "black" }}
+            style={{ color: "white" }}
           >
             Login
           </Nav.Link>
@@ -62,7 +62,7 @@ function NavBar({ currentPage, handlePageChange }) {
             className={
               currentPage === "Signup" ? "nav-link active" : "nav-link"
             }
-            style={{ color: "black" }}
+            style={{ color: "white" }}
           >
             Signup
           </Nav.Link>
@@ -72,7 +72,7 @@ function NavBar({ currentPage, handlePageChange }) {
             className={
               currentPage === "Contact" ? "nav-link active" : "nav-link"
             }
-            style={{ color: "black" }}
+            style={{ color: "white" }}
           >
             Contact
           </Nav.Link>
@@ -84,16 +84,13 @@ function NavBar({ currentPage, handlePageChange }) {
 
   return (
     <div>
-    {/* <Nav> */}
-    {/* <Container> */}
     <Navbar
-      collapseOnSelect
       bg="dark"
       variant="dark"
-      className="navbar navbar-expand-lg me-auto mb-2 bg-body-tertiary"
+      expand='lg'
+
     >
-      <Container fluid>
-      {/* <Container className="nav-item name"> */}
+      <Container>
         <Navbar.Brand
           href="#home"
           onClick={() => handlePageChange("Home")}
@@ -106,29 +103,15 @@ function NavBar({ currentPage, handlePageChange }) {
             className="d-inline-block align-top"
           />
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbarScroll" />
-        <Navbar.Collapse id="navbarScroll">
-          <Nav className="me-auto my-2 my-lg-0" 
-          style={{maxHeight: '100px'}}
-          navbarScroll
-          >
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
           {/* {showNav()} */}
-          <NavDropdown title='Menu' id="navbarScrollDropdown">
-            <NavDropdown.Item>
-              {showNav()}
-            </NavDropdown.Item>
-          </NavDropdown>
+          {showNav()}
           </Nav>
         </Navbar.Collapse>
-      {/* </Container> */}
-      {/* <Container> */}
-      {/* <Nav>
-      {showNav()}
-      </Nav> */}
       </Container>
     </Navbar>
-    {/* </Nav> */}
-    {/* </Container> */}
     </div>
   );
 }
